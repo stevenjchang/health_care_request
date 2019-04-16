@@ -12,17 +12,17 @@ const styles = {
 }
 
 const passDownProps1 = {
-  top: '200px',
-  left: '300px',
+  top: '180px',
+  left: '280px',
   height: '30px',
-  width: '100px'
+  width: '472px'
 }
 
 const passDownProps2 = {
-  top: '200px',
-  left: '500px',
+  top: '180px',
+  left: '773px',
   height: '30px',
-  width: '100px'
+  width: '188px'
 }
 
 class HealthForm extends Component {

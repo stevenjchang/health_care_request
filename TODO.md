@@ -8,4 +8,7 @@ x 1:15 - 2:00 - research drag and drop method or library
 1:45 - 2:15 - create sample TextInput component
   - create multiple TextInputs
 
+2:15 - 2:45 - setup data model in store
+
+
 use third party form tool?

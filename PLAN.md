@@ -18,6 +18,19 @@
 > }
 
 3. create 1 input field
+  - using passedProps
+
+4. create multiple input field
+
+#####
+
+5. look up redux store
+  - how does redux data look like for 2 TextInputs?
+
+6. connect third party form library
+
+7. save user input
+
 
 
 
