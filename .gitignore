@@ -3,3 +3,5 @@ yarn-error.log
 yarn.lock
 .env
 public/dist
+
+client/src/config
