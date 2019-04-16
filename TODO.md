@@ -10,5 +10,8 @@ x 1:15 - 2:00 - research drag and drop method or library
 
 2:15 - 2:45 - setup data model in store
 
+2:55 - 3:10 - setup redux, render props from store
+
+
 
 use third party form tool?

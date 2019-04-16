@@ -3,7 +3,7 @@ import TextInput from './TextInput';
 
 import { pdf_1_url } from '../config/pdf_url';
 
-const styles = {
+const pdfStyles = {
   backgroundImage: `url(${pdf_1_url})`,
   backgroundSize: 'contain',
   height: '1600px',
@@ -11,32 +11,24 @@ const styles = {
   margin: '0 auto',
 }
 
-const passDownProps1 = {
-  top: '180px',
-  left: '280px',
-  height: '30px',
-  width: '472px'
-}
 
-const passDownProps2 = {
-  top: '180px',
-  left: '773px',
-  height: '30px',
-  width: '188px'
-}
+class HealthForm extends Component {
+  componentDidMount() {
+    this.props.fetchFormData();
+  }
 
-const HealthForm = ({ fetchFormData }) => {
-  console.log('fetchFormData ==>', fetchFormData());
-  return (
-    <div style={styles}>
-      <TextInput
-        style={passDownProps1}
-      ></TextInput>
-      <TextInput
-        style={passDownProps2}
-      ></TextInput>
-    </div>
-  );
+  render() {
+    let { formData } = this.props;
+    return (
+      <div style={pdfStyles}>
+      {
+        formData.map(item => (
+          <TextInput style={item} key={item.id} />
+        ))
+      }
+      </div>
+    );
+  }
 }
 
 export default HealthForm;

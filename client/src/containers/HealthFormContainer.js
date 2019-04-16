@@ -4,7 +4,7 @@ import { fetchFormData } from '../actions';
 import HealthForm from '../components/HealthForm';
 
 const mapStateToProps = (state) => ({
-
+  formData: state.healthForm.formData || [],
 });
 
 const mapDispatchToProps = (dispatch) => ({
