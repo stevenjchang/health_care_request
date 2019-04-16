@@ -7,7 +7,8 @@ const styles = {
 }
 
 const TextInput = ({ style }) => {
-  let combineStyles = Object.assign(styles, style);
+  let combineStyles = { ...styles, ...style };
+
   return (
     <>
       <input type="text" style={combineStyles} />
