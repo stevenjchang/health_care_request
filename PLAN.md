@@ -1,8 +1,28 @@
 1. setup image as background on website.
 
-2. adding drag & drop plugin using either jQuery or React.
+2. design front end data, what it looks like
+
+> {
+>   id,
+>   x,
+>   y,
+>   height,
+>   width,
+>   label,
+>   type,
+>   text/content,
+>   isRequired,
+>   time?,
+>   touched?,
+>   fontSize?,
+> }
+
+3. create 1 input field
 
 
+
+
+-----
 
 Things to skip
 1. actually being able to choose which file.
