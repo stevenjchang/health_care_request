@@ -25,19 +25,18 @@ const passDownProps2 = {
   width: '188px'
 }
 
-class HealthForm extends Component {
-  render() {
-    return (
-      <div style={styles}>
-        <TextInput
-          style={passDownProps1}
-        ></TextInput>
-        <TextInput
-          style={passDownProps2}
-        ></TextInput>
-      </div>
-    );
-  }
+const HealthForm = ({ fetchFormData }) => {
+  console.log('fetchFormData ==>', fetchFormData());
+  return (
+    <div style={styles}>
+      <TextInput
+        style={passDownProps1}
+      ></TextInput>
+      <TextInput
+        style={passDownProps2}
+      ></TextInput>
+    </div>
+  );
 }
 
 export default HealthForm;
