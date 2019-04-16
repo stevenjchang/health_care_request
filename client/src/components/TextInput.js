@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 const styles = {
   position: 'absolute',
   border: '2.5px solid blue',
-  top: '200px',
-  left: '300px',
-  height: '30px',
-  width: '100px'
 }
 
-const TextInput = () => {
+const TextInput = ({ style }) => {
+  let combineStyles = Object.assign(styles, style);
   return (
     <>
-      <input type="text" style={styles} />
+      <input type="text" style={combineStyles} />
     </>
   )
 }

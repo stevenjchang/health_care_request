@@ -11,11 +11,20 @@ const styles = {
   margin: '0 auto',
 }
 
+const passDownProps = {
+  top: '200px',
+  left: '300px',
+  height: '30px',
+  width: '100px'
+}
+
 class HealthForm extends Component {
   render() {
     return (
       <div style={styles}>
-        <TextInput></TextInput>
+        <TextInput
+          style={passDownProps}
+        ></TextInput>
       </div>
     );
   }
