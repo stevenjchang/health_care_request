@@ -48,10 +48,9 @@ class AddInputField extends Component {
         {
           showModal
           && positionProperties.map((position) => (
-            <label>
+            <label key={position}>
               {position}
               <input type="text"
-                key={position}
                 name={position}
                 value={this.state[position]}
                 onChange={this.handleChange}
