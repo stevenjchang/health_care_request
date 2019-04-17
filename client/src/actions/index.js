@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const defaultFormName = 'pdf_1'
 const jsonFromApi = {
   formName: 'pdf_1',
   formData: {
@@ -23,7 +22,6 @@ const jsonFromApi = {
 }
 
 export const fetchFormData = () => {
-  // const form_name = formName || defaultFormName;
   const data = jsonFromApi;
   return (dispatch) => {
     dispatch({ type: 'SET_FORM_DATA', data });

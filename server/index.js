@@ -10,9 +10,7 @@ app.use(express.static(path.join(__dirname, '../public/dist')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/posts', db.getPosts);
-
-app.get('/db', db.selectTestTable);
+app.get('/forms', db.getForms);
 
 app.listen(PORT, (err) => {
   if (err) { return console.log('Error occurred in server/index.js =>', err); }

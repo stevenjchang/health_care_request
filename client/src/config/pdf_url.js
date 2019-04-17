@@ -1,0 +1,1 @@
+export const pdf_1_url = "https://s3-us-west-1.amazonaws.com/stevenjchang/pdf_1.jpeg"
