@@ -1,21 +1,16 @@
 const knex = require('../../database/index');
+const fs = require('fs');
+const path = require('path');
 
-const selectTestTable = () => {
-  knex.select().from('test')
-  .then((result) => {
-    // console.log('knex result ==>', result);
-  })
-}
-
-const getPosts = (req, res) => {
-  knex.select().from('sample_posts')
-  .then((result) => {
-    console.log('result ==>', result);
-    res.status(200).send(result);
+const getForms = (req, res) => {
+  let pathFile = path.join(__dirname, '../sample_pdf/pdf_1.jpeg');
+  fs.readFile(pathFile, (err, file) => {
+    if (err) console.log('Error when getting pdf ==>', err)
+    res.writeHead(200, {'Content-Type': 'image/jpeg'});
+    res.end(file);
   })
 }
 
 module.exports = {
-  selectTestTable,
-  getPosts,
+  getForms,
 };
