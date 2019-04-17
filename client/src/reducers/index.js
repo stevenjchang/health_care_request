@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import posts from './posts';
+import healthForm from './healthForm';
 
 const rootReducer = combineReducers({
-  posts,
+  healthForm,
 });
 
 export default rootReducer;

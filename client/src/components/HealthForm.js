@@ -3,7 +3,7 @@ import TextInput from './TextInput';
 
 import { pdf_1_url } from '../config/pdf_url';
 
-const styles = {
+const pdfStyles = {
   backgroundImage: `url(${pdf_1_url})`,
   backgroundSize: 'contain',
   height: '1600px',
@@ -11,30 +11,26 @@ const styles = {
   margin: '0 auto',
 }
 
-const passDownProps1 = {
-  top: '200px',
-  left: '300px',
-  height: '30px',
-  width: '100px'
-}
-
-const passDownProps2 = {
-  top: '200px',
-  left: '500px',
-  height: '30px',
-  width: '100px'
-}
 
 class HealthForm extends Component {
+  componentDidMount() {
+    this.props.fetchFormData();
+  }
+
   render() {
+    let { formData, customHandleBlur } = this.props;
     return (
-      <div style={styles}>
-        <TextInput
-          style={passDownProps1}
-        ></TextInput>
-        <TextInput
-          style={passDownProps2}
-        ></TextInput>
+      <div style={pdfStyles}>
+      {
+        Object.keys(formData).map(id => (
+          <TextInput
+            style={formData[id]}
+            id={id}
+            key={id}
+            customHandleBlur={customHandleBlur}
+          />
+        ))
+      }
       </div>
     );
   }
