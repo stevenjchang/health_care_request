@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddInputFieldContainer from '../containers/AddInputFieldContainer';
 import TextInput from './TextInput';
 
 import { pdf_1_url } from '../config/pdf_url';
@@ -31,6 +32,7 @@ class HealthForm extends Component {
           />
         ))
       }
+      <AddInputFieldContainer />
       </div>
     );
   }

@@ -25,14 +25,22 @@ const jsonFromApi = {
 export const fetchFormData = () => {
   // const form_name = formName || defaultFormName;
   const data = jsonFromApi;
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch({ type: 'SET_FORM_DATA', data });
   }
 }
 
 export const customHandleBlur = (value, id) => {
   const data = { id, value };
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch({ type: 'SET_TEXT_INPUT_FIELD', data })
+  }
+}
+
+export const addInputField = (id, style) => {
+  const data = { id, style };
+  console.log('data ==>', data);
+  return (dispatch) => {
+    dispatch({ type: 'ADD_INPUT_FIELD', data });
   }
 }

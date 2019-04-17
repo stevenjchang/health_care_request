@@ -10,6 +10,14 @@ const healthForm = (state = [], action) => {
       newState.formData[data.id].content = data.value;
       // TODO: refactor
       return newState;
+    case 'ADD_INPUT_FIELD':
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          [data.id]: data.style
+        }
+      };
     default:
       return state;
   }
