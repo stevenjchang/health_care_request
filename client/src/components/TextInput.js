@@ -9,31 +9,13 @@ const formStyles = {
 }
 
 
-// const TextInput = ({ id, style, customHandleBlur }) => {
-
-// }
-
-// const TextInputWithFormik = withFormik({
-//   mapPropsToValues(props) {
-//     console.log('content ==>', _get(props, 'styles.content'));
-//     return {
-//       content: _get(props, 'styles.content') || '',
-//       customHandleBlur: _get(props, 'customHandleBlur'),
-//     }
-//   },
-
-// })(TextInput);
-
-// export default TextInputWithFormik;
-
 class TextInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { input: '' }
     this.handleChange = this.handleChange.bind(this);
   }
-  componentDidMount() {
-    // this.setState({ input: this.props.style.content });
+  componentWillMount() {
+    this.setState({ input: this.props.style.content });
   }
   handleChange(e) {
     this.setState({
