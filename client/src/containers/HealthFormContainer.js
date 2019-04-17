@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchFormData } from '../actions';
+import { fetchFormData, customHandleBlur } from '../actions';
 import HealthForm from '../components/HealthForm';
 
 const mapStateToProps = (state) => ({
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchFormData: () => dispatch(fetchFormData()),
+  customHandleBlur: (e, id) => dispatch(customHandleBlur(e, id)),
 });
 
 const HealthFormContainer = connect(

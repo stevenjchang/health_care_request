@@ -18,12 +18,17 @@ class HealthForm extends Component {
   }
 
   render() {
-    let { formData } = this.props;
+    let { formData, customHandleBlur } = this.props;
     return (
       <div style={pdfStyles}>
       {
-        formData.map(item => (
-          <TextInput style={item} key={item.id} />
+        Object.keys(formData).map(id => (
+          <TextInput
+            style={formData[id]}
+            id={id}
+            key={id}
+            customHandleBlur={customHandleBlur}
+          />
         ))
       }
       </div>

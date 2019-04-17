@@ -12,6 +12,16 @@ x 1:15 - 2:00 - research drag and drop method or library
 
 2:55 - 3:10 - setup redux, render props from store
 
+3:20 - 3:30 - define input requirements, decide if I need a library
+  - yes, use formik, connect through redux
+
+3:45 - 4:30 - quickly try to use formik with redux, with the ability to save user changes. quickly abandon if it's not straighforward, and implement without formik.
+
+4:55 - 5:10 - change store formData from array to object
+
+5:10 - 5:50 - finish connect through redux
+  - write reducer
+
 
 
 use third party form tool?

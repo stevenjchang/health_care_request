@@ -30,12 +30,8 @@ export const fetchFormData = () => {
   }
 }
 
-export const customHandleBlur = (e, id) => {
-  const data = {
-    id,
-    value: e.target.value,
-  };
-  console.log('data ==>', data);
+export const customHandleBlur = (value, id) => {
+  const data = { id, value };
   return (dispatch, getState) => {
     dispatch({ type: 'SET_TEXT_INPUT_FIELD', data })
   }
