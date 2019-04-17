@@ -44,7 +44,6 @@ class AddInputField extends Component {
         >
           Add Input Field
         </button>
-        
         {
           showModal
           && positionProperties.map((position) => (
