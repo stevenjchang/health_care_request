@@ -6,6 +6,8 @@ const styles = {
   height: '110px'
 }
 
+const positionProperties = ['id', 'top', 'left', 'height', 'width'];
+
 class AddInputField extends Component {
   constructor(props) {
     super(props);
@@ -14,24 +16,56 @@ class AddInputField extends Component {
       left: '989px',
       height: '30px',
       width: '180px',
+      id: 'input_3',
+      showModal: false,
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.showAddInputFieldModal = this.showAddInputFieldModal.bind(this);
   }
 
   handleClick(e) {
-    this.props.addInputField('input_3', this.state)
+    this.props.addInputField(this.state.id, this.state)
   }
+  handleChange(e) {
+    let { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+  showAddInputFieldModal() {
+    this.setState({ showModal: !this.state.showModal})
+  }
+
   render() {
+    const { showModal, top } = this.state;
     return (
       <>
-        <button>Add Input Field</button>
-        <div style={styles}>
-          <button
-            onClick={this.handleClick}
-          >
+        <button
+          onClick={this.showAddInputFieldModal}
+        >
           Add Input Field
+        </button>
+        
+        {
+          showModal
+          && positionProperties.map((position) => (
+            <label>
+              {position}
+              <input type="text"
+                key={position}
+                name={position}
+                value={this.state[position]}
+                onChange={this.handleChange}
+              /> 
+            </label>
+          ))
+        }
+        {
+          showModal
+          && <button
+            onClick={this.handleClick}
+          > Add
           </button>
-        </div>
+        }
       </>
     );
   }
