@@ -41,9 +41,21 @@
     - I have to be able to add new textbox. Is there a shortcut way to implement this, given that I didn't make boxes draggable?
 
 -----
-1. connect third party form library
 
-2. save user input
+7. save user input
+   (currently only saves onBlur)
+
+8. add feature: ability to add input field
+
+-----
+`brainstorm`
+
+First iteration:
+- with predefined positioning
+Second iteration:
+- with user defined positioning, but with numbers only
+
+-----
 
 
 

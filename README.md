@@ -9,3 +9,5 @@ put env file into root folder
 `yarn dev`
 
 Part of the reasoning of not building a backend early on was because I need to be sure how to best to store the data on the front-end, which I wouldn't know until I started building.
+
+Another part of the reasoning was because the backend was much more straighforward, meaning that most people would implement it in a similar way. The front-end decisions seems more open to interpretation, so I chose to tackle it.

@@ -22,6 +22,7 @@ x 1:15 - 2:00 - research drag and drop method or library
 5:10 - 5:50 - finish connect through redux
   - write reducer
 
+6:10 - 7:10 - implement ability to add_input_field
 
 
 
