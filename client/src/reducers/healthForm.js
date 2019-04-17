@@ -6,10 +6,16 @@ const healthForm = (state = [], action) => {
     case 'SET_FORM_DATA':
       return data;
     case 'SET_TEXT_INPUT_FIELD':
-      let newState = state;
-      newState.formData[data.id].content = data.value;
-      // TODO: refactor
-      return newState;
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          [data.id]: {
+            ...state.formData[data.id],
+            content: data.value,
+          }
+        }
+      };
     case 'ADD_INPUT_FIELD':
       return {
         ...state,
