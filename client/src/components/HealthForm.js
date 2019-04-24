@@ -14,8 +14,27 @@ const pdfStyles = {
 
 
 class HealthForm extends Component {
+  constructor(props) {
+    super(props)
+    this.recursivelyRenderChildren = this.recursivelyRenderChildren.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchFormData();
+  }
+
+  recursivelyRenderChildren(item) {
+    if (!item.items) return (
+      <TextInput
+        id={item.id}
+        style={item}
+      />
+    )
+    return [(
+      <TextInput
+      id={item.id}
+      style={item}
+    />)].concat(item.items.map(this.recursivelyRenderChildren))
   }
 
   render() {
@@ -24,12 +43,17 @@ class HealthForm extends Component {
       <div style={pdfStyles}>
       {
         Object.keys(formData).map(id => (
-          <TextInput
-            style={formData[id]}
-            id={id}
-            key={id}
-            customHandleBlur={customHandleBlur}
-          />
+          <>
+            {/* <TextInput
+              style={formData[id]}
+              id={id}
+              key={id}
+              customHandleBlur={customHandleBlur}
+            /> */}
+            {
+              this.recursivelyRenderChildren(formData[id])
+            }
+          </>
         ))
       }
       <AddInputFieldContainer />

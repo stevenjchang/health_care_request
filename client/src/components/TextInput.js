@@ -26,6 +26,7 @@ class TextInput extends React.Component {
   render() {
     let { id, style, customHandleBlur } = this.props;
     let combineStyles = { ...formStyles, ...style };
+    let { items } = style;
 
     return (
       <>

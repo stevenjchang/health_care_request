@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 
 app.get('/forms', db.getForms);
 
+app.post('/form_input', db.saveFormInput)
+
 app.listen(PORT, (err) => {
   if (err) { return console.log('Error occurred in server/index.js =>', err); }
   console.log(`Server is listening on PORT:${PORT}`);

@@ -11,6 +11,17 @@ const getForms = (req, res) => {
   })
 }
 
+const saveFormInput = (req, res) => {
+  const { id, style } = req.body;
+  const { top, left } = style;
+
+  knex('form_input').insert({ top, left })
+  .then((result) => {
+    res.status(200).send(result);
+  })
+}
+
 module.exports = {
   getForms,
+  saveFormInput,
 };
